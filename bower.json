@@ -1,0 +1,20 @@
+{
+  "name": "ng-material",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "THBar <choreno@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.1"
+  }
+}
