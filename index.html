@@ -6,6 +6,7 @@
     <title>Hey ngMaterial!</title>
     <!-- Reference Angular Material stylesheet -->
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link href="bower_components/angular-material-icon/angular-material-icon.css" rel="stylesheet">
 
     <!-- Reference needed scripts. See scripts section above for details on each script-->
     <script src="/bower_components/angular/angular.js"></script>
@@ -26,9 +27,15 @@
         this book. For the moment, understand that it is an Angular Material
         element for creating a title and a toolbar -->
 
-    <md-toolbar layout-padding>
-        <div class="md-toolbar-tools" layout="row" layout-align="end center">
-            <h2>Welcome to Material</h2>
+    <md-toolbar md-scroll-shrink="true" layout-padding class="md-med-tall mdtoolbar-tools-bottom">
+        <span flex></span>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button">
+                <md-icon md-svg-src="/img/ic_menu_black_24px.svg"></md-icon>
+            </md-button>
+            <h2>Page Title</h2>
+            <span flex></span>
+            <md-button>An Action</md-button>
         </div>
     </md-toolbar>
 
@@ -38,24 +45,9 @@
 <body ng-app="sampleApp" layout="column">
 
 
-    <div layout="column" layout-gt-sm="row" layout-padding>
-        
-        <div>
-            <strong>AngularJS</strong>
-            <div>Superheroic JavaScript framework</div>
-            <div>Website: angularjs.org</div>
+<md-icon>accessibility</md-icon>
 
-            <div>Twitter: @angularjs</div>
-        </div>
 
-        <div>
-            <strong>Angular Material</strong>
-            <div>AngularJS and Material Design</div>
-            <div>material.angularjs.org</div>
-            <div>Twitter: @angularjs</div>
-        </div>
-
-    </div>
 
 
 
@@ -67,3 +59,5 @@
 </body>
 
 </html>
+
+
