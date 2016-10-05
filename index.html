@@ -50,91 +50,87 @@
 
 <body>
 
+    <md-menu>
+        <!-- Trigger for menu -->
+        <md-button md-menu-origin ng-click="$mdOpenMenu()">
+            Actions
+        </md-button>
+        <!-- Individual menu options and buttons-->
+        <md-menu-content>
+            <md-menu-item>
+                <md-button ng-click="shareHandler()">
+                    Share
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="tagHandler()">
+                    Tag the page
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button md-autofocus ng-click="copyHandler()">
+                    Copy link
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
 
-    <md-button class="md-raised md-primary">Primary Button</md-button>
-    <md-button class="md-raised md-accent"> Accent Button</md-button>
-    <md-button class="md-raised md-warn">Warning Button</md-button>
-    <md-button class="md-raised md-warn md-hue-1">Hue-1 Button</md-button>
-
-    <md-button class="md-raised md-accent" ng-href="https://material.angularjs.org/" target="__blank">Use as a link</md-button>
-    <md-button class="md-icon-button md-primary">
-        <i class="material-icons">code</i>
-    </md-button>
 
 
-    <div>
-        <md-button class="md-icon-button md-warn">
+    <md-menu md-offset="30 10" md-position-mode="target-right target">
+        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+            <!--<md-icon md-menu-origin="" md-svg-icon="call:ring-volume"></md-icon>-->
             <i class="material-icons">menu</i>
         </md-button>
-        <strong>(Menu Button)</strong>
-    </div>
-    <div>
-        <md-button class="md-warn"><strong>Default Button</strong></md-button>
-    </div>
 
-    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-    </svg>
+        <!--<md-menu-item ng-repeat="item in [1, 2, 3]">
+                    <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target="">Option</span> {{item}} </md-button>
+                </md-menu-item>-->
 
-
-
-    <md-button class="md-fab md-primary">
-
-        <i class="material-icons" style="display:block">power_settings_new</i>
-
-    </md-button>
-
-
-    <md-fab-speed-dial ng-cloak md-open="isOpen" md-direction="right" class="md-fling md-fab-bottom-left" ng-mouseenter="isOpen=true"
-        ng-mouseleave="isOpen=false">
-        <md-fab-trigger>
-            <md-button class="md-fab">
-                <i class="material-icons">settings</i>
-            </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-            <md-button class="md-fab md-primary md-mini">
-                <md-tooltip md-direction="left">Bluetooth</md-tooltip>
-                <i class="material-icons">bluetooth</i>
-            </md-button>
-            <md-button class="md-fab md-primary md-mini">
-                <md-tooltip md-direction="left">Brightness</md-tooltip>
-                <i class="material-icons">settings_brightness</i>
-            </md-button>
-            <md-button class="md-fab md-primary md-mini">
-                <md-tooltip md-direction="left">Display Overscan</md-tooltip>
-                <i class="material-icons">settings_overscan</i>
-            </md-button>
-            <md-button class="md-fab md-primary md-mini">
-                <md-tooltip md-direction="right">Voice</md-tooltip>
-                <i class="material-icons">settings_voice</i>
-            </md-button>
-        </md-fab-actions>
-    </md-fab-speed-dial>
-
-
-
-    <md-fab-toolbar ng-cloak="" md-direction="left" class="md-fab-bottom-right">
-        <md-fab-trigger class="align-with-text">
-            <md-button aria-label="Settings" class="md-fab md-primary">
-                <i class="material-icons">settings</i>
-            </md-button>
-        </md-fab-trigger>
-        <md-toolbar>
-            <md-fab-actions class="md-toolbar-tools">
-                <md-button aria-label="Bluetooth Settings" class="md-icon-button">
-                    <i class="material-icons">bluetooth</i>
+        <md-menu-content>
+            <md-menu-item>
+                <md-button ng-click="shareHandler()">
+                    Share
                 </md-button>
-                <md-button aria-label="Brightness Settings" class="md-icon-button">
-                    <i class="material-icons">settings_brightness</i>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="tagHandler()">
+                    Tag the page
                 </md-button>
-                <md-button aria-label="Overscan Settings" class="md-iconbutton">
-                    <i class="material-icons">settings_voice</i>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button md-menu-align-target ng-click="copyHandler()">
+                    Copy link
                 </md-button>
-            </md-fab-actions>
-        </md-toolbar>
-    </md-fab-toolbar>
+            </md-menu-item>
+        </md-menu-content>
+
+
+
+
+
+    </md-menu>
+
+
+
+
+<md-menu>
+ <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open some menu">
+   <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>
+ </md-button>
+ <md-menu-content>
+   <md-menu-item>
+     <md-button ng-click="doSomething()" aria-label="Do something">
+       <md-icon md-menu-align-target md-svg-icon="call:phone"></md-icon>
+       Do Something
+     </md-button>
+   </md-menu-item>
+ </md-menu-content>
+</md-menu>
+
+
+
+
 
 
 
