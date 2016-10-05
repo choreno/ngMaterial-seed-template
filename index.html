@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Hey ngMaterial!</title>
-    <!-- Reference Angular Material stylesheet -->
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-    <link href="bower_components/angular-material-icon/angular-material-icon.css" rel="stylesheet">
 
-    <!-- Reference needed scripts. See scripts section above for details on each script-->
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/bower_components/angular-aria/angular-aria.js"></script>
-    <script src="/bower_components/angular-messages/angular-messages.js"></script>
-    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-material/angular-material.min.js"></script>
+
+
+
+
+
+
 
     <!-- Bootstrap Angular Material Application. We create a module with
         ngMaterial as a dependency. Learn more about an AngularJS module in a
@@ -30,9 +35,9 @@
     <md-toolbar md-scroll-shrink="true" layout-padding class="md-med-tall mdtoolbar-tools-bottom">
         <span flex></span>
         <div class="md-toolbar-tools">
-            <md-button class="md-icon-button">
+            <!--<md-button class="md-icon-button">
                 <md-icon md-svg-src="/img/ic_menu_black_24px.svg"></md-icon>
-            </md-button>
+            </md-button>-->
             <h2>Page Title</h2>
             <span flex></span>
             <md-button>An Action</md-button>
@@ -43,21 +48,22 @@
 </head>
 
 <body ng-app="sampleApp" layout="column">
+    <!--
+<md-icon> face </md-icon>
+<!-- becomes this at runtime: -->
+    <!--<md-icon md-font-set="material-icons"> face </md-icon>
+
+<md-icon md-font-set="md">favorite</md-icon>-->
+
+    <i class="material-icons" style="font-size:40px;color:orange">face</i>
+    <i class="material-icons md-18">face</i>
+    <i class="material-icons md-24">face</i>
+    <i class="material-icons md-36 md-inactive">face</i>
+    <i class="material-icons md-48">face</i>
 
 
-<md-icon>accessibility</md-icon>
-
-
-
-
-
-
-
-
-
+    <i class="material-icons md-light">face</i>
 
 </body>
 
 </html>
-
-
