@@ -19,6 +19,7 @@ gulp.task('watches', ['browserSync'], function () {
 
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('*.js', browserSync.reload);
+    gulp.watch('styles/**/*.css', browserSync.reload);
 
 });
 
