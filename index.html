@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sampleApp" ng-controller="indexCtrl">
 
 <head>
     <meta charset="UTF-8">
@@ -14,17 +14,17 @@
     <script type="text/javascript" src="node_modules/angular-messages/angular-messages.min.js"></script>
     <script type="text/javascript" src="node_modules/angular-material/angular-material.min.js"></script>
 
-
-
-
-
-
+    <script type="text/javascript" src="app.js"></script>
 
     <!-- Bootstrap Angular Material Application. We create a module with
         ngMaterial as a dependency. Learn more about an AngularJS module in a
         later section of the chapter -->
-    <script>angular.module("sampleApp", ["ngMaterial"]);</script>
+    <!--<script>
+        angular.module("sampleApp", [$scope,"ngMaterial"]);
 
+        $scope.showLeftSidenav = true;
+
+    </script>-->
 
 
     <!-- Create a title: Here we are creating a simple toolbar. We will get
@@ -32,12 +32,13 @@
         this book. For the moment, understand that it is an Angular Material
         element for creating a title and a toolbar -->
 
-    <md-toolbar md-scroll-shrink="true" layout-padding class="md-med-tall mdtoolbar-tools-bottom">
+    <md-toolbar layout-padding class="mdtoolbar-tools-bottom">
+        <!--<md-toolbar md-scroll-shrink="false" layout-padding class="md-med-tall mdtoolbar-tools-bottom">-->
         <span flex></span>
         <div class="md-toolbar-tools">
-            <!--<md-button class="md-icon-button">
-                <md-icon md-svg-src="/img/ic_menu_black_24px.svg"></md-icon>
-            </md-button>-->
+            <md-button class="md-icon-button" ng-click="toggleLeftSidenav()">
+                <i class="material-icons">menu</i>
+            </md-button>
             <h2>Page Title</h2>
             <span flex></span>
             <md-button>An Action</md-button>
@@ -45,24 +46,95 @@
     </md-toolbar>
 
 
+
+
+
+
 </head>
 
-<body ng-app="sampleApp" layout="column">
-    <!--
-<md-icon> face </md-icon>
-<!-- becomes this at runtime: -->
-    <!--<md-icon md-font-set="material-icons"> face </md-icon>
+<body layout="column">
 
-<md-icon md-font-set="md">favorite</md-icon>-->
+    <md-card>
+        <!-- Header for the card. Usually describes category -->
+        <md-card-header>
+            <!-- Avatar - symbolic representation of content in the card -->
+            <md-card-avatar class="md-user-avatar">
+                <i class="material-icons">account_circle</i>
+            </md-card-avatar>
+            <!-- Header content -->
+            <md-header-text>
+                <div class="md-title">JavaScript Library</div>
+                <div class="md-subhead">Explore and share</div>
+            </md-header-text>
+        </md-card-header>
 
-    <i class="material-icons" style="font-size:40px;color:orange">face</i>
-    <i class="material-icons md-18">face</i>
-    <i class="material-icons md-24">face</i>
-    <i class="material-icons md-36 md-inactive">face</i>
-    <i class="material-icons md-48">face</i>
+        <!--Workspace or the main content of the card -->
+        <md-card-content>
+            <!-- Card title content -->
+            <md-card-title layout-align="center center">
+                <md-card-title-media flex="50">
+                    <i class="material-icons">settings</i>
+                </md-card-title-media>
+                <!-- Title caption and description -->
+                <md-card-title-text flex="50">
+                    <span class="md-headline">Angular Material</span>
+                    <span class="md-subhead">Material Design Implementation with AngularJS</span>
+                </md-card-title-text>
+            </md-card-title>
+
+            <p>For building great applications that are responsive and adhers to Material Design specifications, Angular Material
+                is an obvious choice</p>
+
+        </md-card-content>
+
+        <!-- Actions or buttons that you might need on card -->
+        <md-card-actions >
+            <md-button class="md-raised md-primary">Share</md-button>
+                <md-button class="md-raised md-primary">More...</md-button>
+        </md-card-actions>
+
+        <!-- Card footer -->
+        <md-card-footer>
+            <span>Copyright - sample text.</span>
+        </md-card-footer>
+
+        
+
+        <!--<md-card>
+          <md-card-header>
+            <md-card-avatar>
+              <img class="md-user-avatar" src="image-source">
+            </md-card-avatar>
+            <md-card-header-text>
+              <span class="md-title">title</span>
+              <span class="md-subhead">sub-title</span>
+            </md-card-header-text>
+          </md-card-header>
+          <img ng-src="iamge-source" class="md-card-image" alt="image-alt">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">card-headline</span>
+              <span class="md-subhead">card-subheadline</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-actions layout="row|column" layout-align="start|center|end|space-around|space-between start|center|end|stretch">
+            <md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>
+            <md-card-icon-actions>
+              <md-button class="button-class" aria-label="label">
+                content
+              </md-button>
+            </md-card-icon-actions>
+          </md-card-actions>
+          <md-card-content>
+              content
+          </md-card-content>
+        </md-card>
+
+    </md-card>-->
 
 
-    <i class="material-icons md-light">face</i>
+
 
 </body>
 
