@@ -33,8 +33,8 @@
         this book. For the moment, understand that it is an Angular Material
         element for creating a title and a toolbar -->
 
-    <!--   
-        <md-toolbar md-scroll-shrink="false" layout-padding class="md-med-tall mdtoolbar-tools-bottom">
+
+    <md-toolbar md-scroll-shrink="false" layout-padding class="md-med-tall mdtoolbar-tools-bottom">
         <span flex></span>
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" ng-click="toggleLeftSidenav()">
@@ -44,76 +44,69 @@
             <span flex></span>
             <md-button>An Action</md-button>
         </div>
-    </md-toolbar>-->
+    </md-toolbar>
 
 </head>
 
 <body>
 
+    <div class="md-padding" id="popupContainer" ng-cloak>
+        <p class="inset">
+            Open a dialog over the app's content. Press escape or click outside to close the dialog and send focus back to the triggering
+            button.
+        </p>
 
-    <!--<md-input-container flex>
-        <input type="text" placeholder="Enter full name" flex name="fullName" ng-model="fullName" required md-maxlength="20">
-        <div ng-messages="indexCtrl.fullName.$error">
-            <div ng-message="required">Fullname is mandatory</div>
-            <div ng-message="md-maxlength">This field can not accept more than twenty characters</div>
+        <div class="dialog-demo-content" layout="row" layout-wrap layout-margin layout-align="center">
+            <md-button class="md-primary md-raised" ng-click="showAlert($event)">
+                Alert Dialog
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="showConfirm($event)">
+                Confirm Dialog
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="showPrompt($event)">
+                Prompt Dialog
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
+                Custom Dialog
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="showTabDialog($event)">
+                Tab Dialog
+            </md-button>
+            <md-button class="md-primary md-raised" ng-if="listPrerenderedButton" ng-click="showPrerenderedDialog($event)">
+                Pre-Rendered Dialog
+            </md-button>
         </div>
-    </md-input-container>
+        <p class="footer">Note: The <b>Confirm</b> dialog does not use <code>$mdDialog.clickOutsideToClose(true)</code>.</p>
 
-    <md-select ng-model="selectedSuperHero" md-on-open="loadSuperHeroes()" md-on-close="superHeroSelectionComplete()" placeholder="Select your favorite super hero">
-        <md-option ng-value="item" ng-repeat="item in superHeroes">{{item.name}}
-        </md-option>
-    </md-select>-->
+        <div ng-if="status" id="status">
+            <b layout="row" layout-align="center center" class="md-padding">
+      {{status}}
+    </b>
+        </div>
 
+        <div class="dialog-demo-prerendered">
+            <md-checkbox ng-model="listPrerenderedButton">Show Pre-Rendered Dialog</md-checkbox>
+            <p class="md-caption">Sometimes you may not want to compile the dialogs template on each opening.</p>
+            <md-checkbox ng-model="customFullscreen" aria-label="Fullscreen custom dialog">Use full screen mode for custom dialog</md-checkbox>
+            <p class="md-caption">Allows the dialog to consume all available space on small devices</p>
+        </div>
 
+        <div style="visibility: hidden">
+            <div class="md-dialog-container" id="myDialog">
+                <md-dialog layout-padding>
+                    <h2>Pre-Rendered Dialog</h2>
+                    <p>
+                        This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its template
+                        on each opening.
+                        <br/><br/> The Dialog Element is a static element in the DOM, which is just visually hidden.<br/>
+                        Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close we restore
+                        the element back into its old DOM position.
+                    </p>
+                </md-dialog>
+            </div>
+        </div>
 
-    <md-select ng-model="selectedSuperHero" md-on-open="loadSuperHeroes()" md-on-close="superHeroSelectionComplete()" placeholder="Select your favorite super hero">
-        <md-optgroup label="Marvel">
-            <md-option ng-value="item" ng-repeat="item in superHeroes|filter:'Marvel'">{{item.name}}</md-option>
-        </md-optgroup>
-        <md-optgroup label="Disney">
-            <md-option ng-value="item" ng-repeat="item in superHeroes|filter:'Disney'">{{item.name}}</md-option>
-        </md-optgroup>
-        <md-optgroup label="Indian">
-            <md-option ng-value="item" ng-repeat="item in superHeroes|filter:'Indian'">{{item.name}}</md-option>
-        </md-optgroup>
-    </md-select>
-
-    <!--
-
-    <md-autocomplete md-search-text="filterString" md-items="item in filterSuperheroes(filterString)">
-        <md-item-template>
-            <span md-highlight-text="filterString">{{item}}</span>
-        </md-item-template>
-        <md-not-found>
-            No results.
-        </md-not-found>
-    </md-autocomplete>-->
-
-
-
-    <!-- Template -->
-    <!--<md-chips ng-model="tagsOnMowgli">-->
-
-    <strong> Selected {{radioSelectedSuperHero.name}}</strong>
-    <md-radio-group ng-model="radioSelectedSuperHero">
-        <md-radio-button ng-value="item" ng-repeat="item in superHeroes">{{item.name}}</md-radio-button>
-    </md-radio-group>
-
-
-    <div ng-repeat="item in superHeroes">
-        <md-checkbox ng-model="item.isChecked">{{item.name}}</md-checkbox>
     </div>
-
-    <md-slider min="1" max="10" step="1" ng-model="spidermanRating">Spiderman
-    </md-slider>
-    {{spidermanRating || 'unrated'}} on a scale of 10
-
-<div>
-
-<md-datepicker md-placeholder="Select a date" ng-model="dateValue">
-</md-datepicker>
-
-</div>
 
 </body>
 
