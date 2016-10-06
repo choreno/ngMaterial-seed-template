@@ -301,6 +301,14 @@ function expenseCtrl() {
 
     var vm = this; 
 
+    vm.GrandTotal = 400706.58 ;
+    vm.currentMonthTotal = 3925.18; 
+
+    vm.numberOfPayments = 18; 
+    vm.numberOfPaid = 11; 
+
+    
+
 
 
 
