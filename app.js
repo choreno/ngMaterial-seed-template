@@ -6,191 +6,225 @@ angular.module("sampleApp", ["ngMaterial", 'ngMessages'])
 ;
 
 
-function indexCtrl($scope, $timeout, $mdDialog, $mdBottomSheet) {
 
+function indexCtrl($scope, $timeout, $mdDialog, $mdBottomSheet, $interval) {
 
-    $scope.showBottomSheet = function () {
-        $mdBottomSheet.show({
-            template: "<md-bottom-sheet>Welcome to the Bottom Sheet Sample</md-bottom-sheet>"
-        })
+    var vm = this;
+
+    //$scope.progress = 30;
+    vm.title = "what the ...."
+    vm.progress = 30;
+
+    vm.startProgress = function(){
+        $timeout(function(){
+            vm.progress +=1; 
+            if(vm.progress < 100){
+                console.log(vm.progress); 
+                vm.startProgress(); 
+            }
+            else{
+                vm.progress = 30;
+            }
+        }, 100);
     }
 
 
 
 
+ $interval(function() {
+      vm.progress += 1 ;
 
-    var vm = this;
+      if (vm.progress > 100) vm.progress = 30;
 
-    $scope.showLeftSidenav = false;
-    $scope.toggleLeftSidenav = function () {
-        $scope.showLeftSidenav = !$scope.showLeftSidenav;
-    };
+    }, 100,0,true);
 
-    $scope.fullName = "fjdklsjfldksjf";
-
-
-    $scope.superHeroes = [
-        "Iron Man",
-        "Mowgli",
-        "Spiderman",
-        "Superman",
-        "Chhota Bheem"
-    ];
-
-
-
-    $scope.loadSuperHeroes = function () {
-        $timeout(function () {
-            $scope.superHeroes = [
-                { id: 1, name: "Iron Man" },
-                { id: 2, name: "Mowgli" },
-                { id: 3, name: "Spiderman" },
-                { id: 4, name: "Superman" },
-                { id: 5, name: "Chhota Bheem" }
-            ];
-        }, 1000);
-    };
-
-
-    $scope.superHeroes = [
-        { id: 1, name: "Iron Man", category: "Marvel" },
-        { id: 2, name: "Mowgli", category: "Disney" },
-        { id: 3, name: "Spiderman", category: "Marvel" },
-        { id: 4, name: "Superman", category: "DC Comics" },
-        { id: 5, name: "Chhota Bheem", category: "Indian" }
-    ];
-
-    $scope.superHeroSelectionComplete = function () {
-        console.log("Selected Hero - " + $scope.selectedSuperHero.name);
-    };
+  
+  
 
 
 
 
-    // Variable on scope in the controller.
-    $scope.tagsOnMowgli = ["Jungle Book", "Disney"];
-
-
-    $scope.transformChip = function (chip) {
-        if (chip) {
-            for (var state in $scope.uSStateList) {
-                if ($scope.uSStateList[state] === chip || state === chip) {
-                    return state; // return state code when you find a match.
-                }
-            }
-            return null; // return null - so the chip won't be added.
-        }
-    };
 
 
 
-    var imagePath = 'img/list/60.jpeg';
-
-    $scope.phones = [
-        {
-            type: 'Home',
-            number: '(555) 251-1234',
-            options: {
-                icon: 'communication:phone'
-            }
-        },
-        {
-            type: 'Cell',
-            number: '(555) 786-9841',
-            options: {
-                icon: 'communication:phone',
-                avatarIcon: true
-            }
-        },
-        {
-            type: 'Office',
-            number: '(555) 314-1592',
-            options: {
-                face: imagePath
-            }
-        },
-        {
-            type: 'Offset',
-            number: '(555) 192-2010',
-            options: {
-                offset: true,
-                actionIcon: 'communication:phone'
-            }
-        }
-    ];
-
-    $scope.todos = [
-        {
-            face: imagePath,
-            what: 'Brunch this weekend?',
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            face: imagePath,
-            what: 'Brunch this weekend?',
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            face: imagePath,
-            what: 'Brunch this weekend?',
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            face: imagePath,
-            what: 'Brunch this weekend?',
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            face: imagePath,
-            what: 'Brunch this weekend?',
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-    ];
+    // $scope.showBottomSheet = function () {
+    //     $mdBottomSheet.show({
+    //         template: "<md-bottom-sheet>Welcome to the Bottom Sheet Sample</md-bottom-sheet>"
+    //     })
+    // }
 
 
 
-    $scope.showAlert = function (ev) {
-        // Appending dialog to document.body to cover sidenav in docs app
-        // Modal dialogs should fully cover application
-        // to prevent interaction outside of dialog
-        $mdDialog.show(
-            $mdDialog.alert()
-                .parent(angular.element(document.querySelector('#popupContainer')))
-                .clickOutsideToClose(true)
-                .title('This is an alert title')
-                .textContent('You can specify some description text in here.')
-                .ariaLabel('Alert Dialog Demo')
-                .ok('Got it!')
-                .targetEvent(ev)
-        );
-    };
+    // $scope.showLeftSidenav = false;
+    // $scope.toggleLeftSidenav = function () {
+    //     $scope.showLeftSidenav = !$scope.showLeftSidenav;
+    // };
 
-    $scope.showConfirm = function (ev) {
-        // Appending dialog to document.body to cover sidenav in docs app
-        var confirm = $mdDialog.confirm()
-            .title('Would you like to delete your debt?')
-            .textContent('All of the banks have agreed to forgive you your debts.')
-            .ariaLabel('Lucky day')
-            .targetEvent(ev)
-            .ok('Please do it!')
-            .cancel('Sounds like a scam');
+    // $scope.fullName = "fjdklsjfldksjf";
 
-        $mdDialog.show(confirm).then(function () {
-            $scope.status = 'You decided to get rid of your debt.';
-        }, function () {
-            $scope.status = 'You decided to keep your debt.';
-        });
-    };
+
+    // $scope.superHeroes = [
+    //     "Iron Man",
+    //     "Mowgli",
+    //     "Spiderman",
+    //     "Superman",
+    //     "Chhota Bheem"
+    // ];
+
+
+
+    // $scope.loadSuperHeroes = function () {
+    //     $timeout(function () {
+    //         $scope.superHeroes = [
+    //             { id: 1, name: "Iron Man" },
+    //             { id: 2, name: "Mowgli" },
+    //             { id: 3, name: "Spiderman" },
+    //             { id: 4, name: "Superman" },
+    //             { id: 5, name: "Chhota Bheem" }
+    //         ];
+    //     }, 1000);
+    // };
+
+
+    // $scope.superHeroes = [
+    //     { id: 1, name: "Iron Man", category: "Marvel" },
+    //     { id: 2, name: "Mowgli", category: "Disney" },
+    //     { id: 3, name: "Spiderman", category: "Marvel" },
+    //     { id: 4, name: "Superman", category: "DC Comics" },
+    //     { id: 5, name: "Chhota Bheem", category: "Indian" }
+    // ];
+
+    // $scope.superHeroSelectionComplete = function () {
+    //     console.log("Selected Hero - " + $scope.selectedSuperHero.name);
+    // };
+
+
+
+
+    // // Variable on scope in the controller.
+    // $scope.tagsOnMowgli = ["Jungle Book", "Disney"];
+
+
+    // $scope.transformChip = function (chip) {
+    //     if (chip) {
+    //         for (var state in $scope.uSStateList) {
+    //             if ($scope.uSStateList[state] === chip || state === chip) {
+    //                 return state; // return state code when you find a match.
+    //             }
+    //         }
+    //         return null; // return null - so the chip won't be added.
+    //     }
+    // };
+
+
+
+    // var imagePath = 'img/list/60.jpeg';
+
+    // $scope.phones = [
+    //     {
+    //         type: 'Home',
+    //         number: '(555) 251-1234',
+    //         options: {
+    //             icon: 'communication:phone'
+    //         }
+    //     },
+    //     {
+    //         type: 'Cell',
+    //         number: '(555) 786-9841',
+    //         options: {
+    //             icon: 'communication:phone',
+    //             avatarIcon: true
+    //         }
+    //     },
+    //     {
+    //         type: 'Office',
+    //         number: '(555) 314-1592',
+    //         options: {
+    //             face: imagePath
+    //         }
+    //     },
+    //     {
+    //         type: 'Offset',
+    //         number: '(555) 192-2010',
+    //         options: {
+    //             offset: true,
+    //             actionIcon: 'communication:phone'
+    //         }
+    //     }
+    // ];
+
+    // $scope.todos = [
+    //     {
+    //         face: imagePath,
+    //         what: 'Brunch this weekend?',
+    //         who: 'Min Li Chan',
+    //         when: '3:08PM',
+    //         notes: " I'll be in your neighborhood doing errands"
+    //     },
+    //     {
+    //         face: imagePath,
+    //         what: 'Brunch this weekend?',
+    //         who: 'Min Li Chan',
+    //         when: '3:08PM',
+    //         notes: " I'll be in your neighborhood doing errands"
+    //     },
+    //     {
+    //         face: imagePath,
+    //         what: 'Brunch this weekend?',
+    //         who: 'Min Li Chan',
+    //         when: '3:08PM',
+    //         notes: " I'll be in your neighborhood doing errands"
+    //     },
+    //     {
+    //         face: imagePath,
+    //         what: 'Brunch this weekend?',
+    //         who: 'Min Li Chan',
+    //         when: '3:08PM',
+    //         notes: " I'll be in your neighborhood doing errands"
+    //     },
+    //     {
+    //         face: imagePath,
+    //         what: 'Brunch this weekend?',
+    //         who: 'Min Li Chan',
+    //         when: '3:08PM',
+    //         notes: " I'll be in your neighborhood doing errands"
+    //     },
+    // ];
+
+
+
+    // $scope.showAlert = function (ev) {
+    //     // Appending dialog to document.body to cover sidenav in docs app
+    //     // Modal dialogs should fully cover application
+    //     // to prevent interaction outside of dialog
+    //     $mdDialog.show(
+    //         $mdDialog.alert()
+    //             .parent(angular.element(document.querySelector('#popupContainer')))
+    //             .clickOutsideToClose(true)
+    //             .title('This is an alert title')
+    //             .textContent('You can specify some description text in here.')
+    //             .ariaLabel('Alert Dialog Demo')
+    //             .ok('Got it!')
+    //             .targetEvent(ev)
+    //     );
+    // };
+
+    // $scope.showConfirm = function (ev) {
+    //     // Appending dialog to document.body to cover sidenav in docs app
+    //     var confirm = $mdDialog.confirm()
+    //         .title('Would you like to delete your debt?')
+    //         .textContent('All of the banks have agreed to forgive you your debts.')
+    //         .ariaLabel('Lucky day')
+    //         .targetEvent(ev)
+    //         .ok('Please do it!')
+    //         .cancel('Sounds like a scam');
+
+    //     $mdDialog.show(confirm).then(function () {
+    //         $scope.status = 'You decided to get rid of your debt.';
+    //     }, function () {
+    //         $scope.status = 'You decided to keep your debt.';
+    //     });
+    // };
 
 
 
