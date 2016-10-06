@@ -1,8 +1,23 @@
 angular.module("sampleApp", ["ngMaterial", 'ngMessages'])
-    .controller('indexCtrl', indexCtrl);
+    .controller('indexCtrl', indexCtrl)
+    .config(function ($mdIconProvider) {
+        $mdIconProvider.fontSet('md', 'material-icons');
+    });
+;
 
 
-function indexCtrl($scope, $timeout, $mdDialog) {
+function indexCtrl($scope, $timeout, $mdDialog, $mdBottomSheet) {
+
+
+    $scope.showBottomSheet = function () {
+        $mdBottomSheet.show({
+            template: "<md-bottom-sheet>Welcome to the Bottom Sheet Sample</md-bottom-sheet>"
+        })
+    }
+
+
+
+
 
     var vm = this;
 
@@ -14,27 +29,27 @@ function indexCtrl($scope, $timeout, $mdDialog) {
     $scope.fullName = "fjdklsjfldksjf";
 
 
-    // $scope.superHeroes = [
-    //     "Iron Man",
-    //     "Mowgli",
-    //     "Spiderman",
-    //     "Superman",
-    //     "Chhota Bheem"
-    // ];
+    $scope.superHeroes = [
+        "Iron Man",
+        "Mowgli",
+        "Spiderman",
+        "Superman",
+        "Chhota Bheem"
+    ];
 
 
 
-    // $scope.loadSuperHeroes = function () {
-    //     $timeout(function () {
-    //         $scope.superHeroes = [
-    //             { id: 1, name: "Iron Man" },
-    //             { id: 2, name: "Mowgli" },
-    //             { id: 3, name: "Spiderman" },
-    //             { id: 4, name: "Superman" },
-    //             { id: 5, name: "Chhota Bheem" }
-    //         ];
-    //     }, 1000);
-    // };
+    $scope.loadSuperHeroes = function () {
+        $timeout(function () {
+            $scope.superHeroes = [
+                { id: 1, name: "Iron Man" },
+                { id: 2, name: "Mowgli" },
+                { id: 3, name: "Spiderman" },
+                { id: 4, name: "Superman" },
+                { id: 5, name: "Chhota Bheem" }
+            ];
+        }, 1000);
+    };
 
 
     $scope.superHeroes = [
