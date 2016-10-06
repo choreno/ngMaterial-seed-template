@@ -33,8 +33,8 @@
         this book. For the moment, understand that it is an Angular Material
         element for creating a title and a toolbar -->
 
-    <md-toolbar layout-padding class="mdtoolbar-tools-bottom">
-        <!--<md-toolbar md-scroll-shrink="false" layout-padding class="md-med-tall mdtoolbar-tools-bottom">-->
+<!--   
+        <md-toolbar md-scroll-shrink="false" layout-padding class="md-med-tall mdtoolbar-tools-bottom">
         <span flex></span>
         <div class="md-toolbar-tools">
             <md-button class="md-icon-button" ng-click="toggleLeftSidenav()">
@@ -44,92 +44,21 @@
             <span flex></span>
             <md-button>An Action</md-button>
         </div>
-    </md-toolbar>
+    </md-toolbar>-->
 
 </head>
 
 <body>
 
-    <md-menu>
-        <!-- Trigger for menu -->
-        <md-button md-menu-origin ng-click="$mdOpenMenu()">
-            Actions
-        </md-button>
-        <!-- Individual menu options and buttons-->
-        <md-menu-content>
-            <md-menu-item>
-                <md-button ng-click="shareHandler()">
-                    Share
-                </md-button>
-            </md-menu-item>
-            <md-menu-item>
-                <md-button ng-click="tagHandler()">
-                    Tag the page
-                </md-button>
-            </md-menu-item>
-            <md-menu-item>
-                <md-button md-autofocus ng-click="copyHandler()">
-                    Copy link
-                </md-button>
-            </md-menu-item>
-        </md-menu-content>
-    </md-menu>
 
-
-
-    <md-menu md-offset="30 10" md-position-mode="target-right target">
-        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu()">
-            <!--<md-icon md-menu-origin="" md-svg-icon="call:ring-volume"></md-icon>-->
-            <i class="material-icons">menu</i>
-        </md-button>
-
-        <!--<md-menu-item ng-repeat="item in [1, 2, 3]">
-                    <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target="">Option</span> {{item}} </md-button>
-                </md-menu-item>-->
-
-        <md-menu-content>
-            <md-menu-item>
-                <md-button ng-click="shareHandler()">
-                    Share
-                </md-button>
-            </md-menu-item>
-            <md-menu-item>
-                <md-button ng-click="tagHandler()">
-                    Tag the page
-                </md-button>
-            </md-menu-item>
-            <md-menu-item>
-                <md-button md-menu-align-target ng-click="copyHandler()">
-                    Copy link
-                </md-button>
-            </md-menu-item>
-        </md-menu-content>
-
-
-
-
-
-    </md-menu>
-
-
-
-
-<md-menu>
- <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open some menu">
-   <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>
- </md-button>
- <md-menu-content>
-   <md-menu-item>
-     <md-button ng-click="doSomething()" aria-label="Do something">
-       <md-icon md-menu-align-target md-svg-icon="call:phone"></md-icon>
-       Do Something
-     </md-button>
-   </md-menu-item>
- </md-menu-content>
-</md-menu>
-
-
-
+<md-toolbar class="md-accent" >
+<div class="md-toolbar-tools">
+Sample Header
+</div>
+</md-toolbar>
+<md-content layout-padding>
+<md-switch ng-model="true">Power On?</md-switch>
+</md-content>
 
 
 
