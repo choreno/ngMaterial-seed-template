@@ -17,39 +17,47 @@
 
     <script type="text/javascript" src="app.js"></script>
 
-    <!-- Bootstrap Angular Material Application. We create a module with
-        ngMaterial as a dependency. Learn more about an AngularJS module in a
-        later section of the chapter -->
-    <!--<script>
-        angular.module("sampleApp", [$scope,"ngMaterial"]);
-
-        $scope.showLeftSidenav = true;
-
-    </script>-->
-
-
-    <!-- Create a title: Here we are creating a simple toolbar. We will get
-        into details of various controls in Angular Material during course of
-        this book. For the moment, understand that it is an Angular Material
-        element for creating a title and a toolbar -->
-
-    <md-toolbar md-scroll-shrink="false" layout-padding class="md-med-tall mdtoolbar-tools-bottom">
-        <span flex></span>
-        <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" ng-click="toggleLeftSidenav()">
-                <i class="material-icons">menu</i>
-            </md-button>
-            <h2>Page Title</h2>
-            <span flex></span>
-            <md-button>An Action</md-button>
-        </div>
-    </md-toolbar>
-
 
 </head>
 
-<body >
+<body>
 
+<div>
+    <h4>Result: {{vm.result}}</h4>
+    <h2>Elapsed Time: {{vm.elapsedTime}}</h2>
+    <h1>Failure: {{vm.failure}}</h2>
+</div>
+
+
+
+
+
+
+
+
+    <!--<div layout="row">
+        <div flex="20" style="background-color:yellow">
+            [flex="20"]
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque molestias, illum delectus nemo ut, praesentium similique ea dolorum. Iure architecto modi molestias quas sunt, quia odio doloribus officia voluptatem laboriosam.</div>
+            <div>Nesciunt incidunt error culpa sed dolor, laudantium veritatis commodi, odio consequuntur ipsa amet nihil? Eligendi neque nesciunt, libero eum est vel culpa explicabo accusamus itaque beatae veniam enim impedit. Iusto.</div>
+            <div>Itaque nisi sit praesentium nemo quos temporibus ipsum optio asperiores quis tenetur porro error, velit, sapiente eligendi fugit ratione dolore. Est nihil blanditiis sequi perspiciatis, maiores laudantium illo inventore non.</div>
+            <div>Asperiores cupiditate, ex consequatur illo provident adipisci reprehenderit minima quae atque, neque, quaerat incidunt doloremque dolor tenetur assumenda, pariatur distinctio dolore veniam eaque. Inventore vitae, rem qui, repellendus nihil dolorum!</div>
+            <div>Consequatur, debitis facere esse cupiditate veniam eius adipisci accusamus hic illo eaque ab, nesciunt, error tempore vitae doloremque voluptatem deleniti veritatis saepe possimus architecto delectus blanditiis, dolor! Deleniti, molestias. Vitae.</div>
+            <div>Error esse quia eum ea nemo repellat non aperiam aspernatur provident impedit odio inventore, quo cum officiis commodi, voluptatem, in maiores, animi? Nostrum, soluta odit magnam perspiciatis rem adipisci, atque.</div>
+            <div>Maxime voluptatum possimus sequi? Doloremque similique sequi possimus, accusamus perferendis excepturi odio ea. Dolores ullam cumque excepturi, consectetur nihil modi blanditiis! Nisi quo sunt nemo asperiores ipsa quos tempore corporis.</div>
+            <div>Repudiandae corporis tenetur labore, sapiente ratione quia totam, hic. Quo, sunt sed sapiente numquam laudantium quam assumenda et recusandae, fugiat explicabo est dignissimos, similique tempora dolore. Hic similique, eius unde.</div>
+            <div>Minima libero, nemo assumenda fuga tenetur delectus facilis modi repudiandae labore, vero impedit, neque officia totam excepturi odit ullam dolorum sit! Veritatis qui laboriosam sit, molestiae cumque excepturi, corporis autem.</div>
+            <div>Fugiat illo iusto quae dolore odio blanditiis odit rem optio sunt distinctio, earum qui quod fugit facere sapiente repellat provident. Dicta aut, ex. Aperiam nulla nobis architecto eligendi, placeat sapiente.</div>
+        </div>
+        <div flex style="background-color:green">
+            [flex="70"]
+        </div>
+        <div flex hide-sm hide-xs style="background-color:orange">
+            [flex]
+        </div>
+    </div>-->
+
+    <!--
 
     <div layout-gt-xs="row" flex layout="column">
         <div style="background-color:skyblue" ng-class="{rowFill:isGreaterThanXs}" flex="25" layout="column" layout-padding layoutalign="center center">
@@ -92,7 +100,7 @@ Add a photo
 Loved it
 </md-button>
 </md-menu-item>
-</md-menu-content>
+</md-menu-content>-->
 
 
 </body>
